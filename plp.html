@@ -1,35 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOVE NAIROBI</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Love Nairobi</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/4/4e/Nairobi_Skyline_Icon.svg" type="image/svg+xml">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background-color: #f6f3ef;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: #d97941;
+      padding: 1em;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1em;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffdfba;
+    }
+
+    .hero {
+      background: linear-gradient(to bottom right, rgba(0,0,0,0.7), rgba(0,0,0,0.4)),
+        url('https://images.pexels.com/photos/20395040/pexels-photo-20395040.jpeg') center/cover no-repeat;
+      color: #fff5e0;
+      text-align: center;
+      padding: 100px 20px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      animation: fadeInDown 1s ease;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .card h2 {
+      color: #b85c38;
+      font-size: 1.8rem;
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0.5em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <head>
-        <h1>WELCOME TO NAIROBI</h1>
-    </head>
-    <H2>the heart of kenya</H2>
-    <h4>introduction</h4>
-    <p>nairobi is the capital city of kenya and also one of the first growing cities in east africa</p>
-    <h4>nairobi history</h4>
-    <p>nairobi was founded in 1899 as railway depot on the uganda railway.it quickly expanded and became ;</p>
-    <ul>
-        <li>the capital of british</li>
-        <li>the capital of independence for kenya</li>
-        <li>the major hub for trade</li>
-    </ul>
-    <h4>nature meets city</h4>
-    <img src="https://images.pexels.com/photos/20395040/pexels-photo-20395040.jpeg" alt="animal pictures in the park"width=400 length="500">
-    <p>nairobi is the only city in the world with national park within its borders</p>
-    <ul>
-        <h5><em>top natural attractions</em></h5>
-        <li>nairobi national-home to lions,rhinos,giraffes and zebras</li>
-        <li>girrafe center-a sanctuary for endangering rothschild giraffes</li>
-        <li>karura forest-urban forest for walking,cycling and yoga</li>
-    </ul>
-    <h4>culture and the people</h4>
-    <p>nairobi is a melting pot of over 40 kenyans tribes and many global cultures ie<li>hindu</li><li>somalis</p>
-        <img src="https://images.pexels.com/photos/31584934/pexels-photo-31584934.jpeg" alt="somalis in kenya"width=400 length="500">
+  <nav>
+    <a href="#introduction">Introduction</a>
+    <a href="#history">History</a>
+    <a href="#nature">Nature</a>
+    <a href="#culture">Culture</a>
+  </nav>
+
+  <header class="hero">
+    <div class="overlay">
+      <h1>Welcome to Nairobi</h1>
+      <p>The Heart of Kenya</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="introduction" class="card">
+      <h2>🌍 Introduction</h2>
+      <p>Nairobi, the capital city of Kenya, stands as one of the fastest-growing urban centers in East Africa. Known for its dynamic energy and cultural diversity, the city serves as a major hub for business, innovation, and international diplomacy. With a rapidly expanding skyline, vibrant tech scene, and rich history, Nairobi continues to attract people from across the region and beyond. Its unique blend of modern infrastructure and natural beauty—highlighted by attractions like Nairobi National Park—makes it not only a key economic powerhouse but also a destination of cultural and environmental significance.</p>
+    </section>
+
+    <section id="history" class="card">
+      <h2>🏛️ History</h2>
+      <p>Founded in 1899 as a railway depot on the Uganda Railway. It quickly grew to become:</p>
+      <ul>
+        <li>The capital of British East Africa</li>
+        <li>The seat of power after Kenya’s independence</li>
+        <li>A major regional hub for trade, tech, and culture</li>
+      </ul>
+    </section>
+
+    <section id="nature" class="card">
+      <h2>🌿 Nature & Wildlife</h2>
+      <img src="https://images.pexels.com/photos/20395040/pexels-photo-20395040.jpeg" alt="Nairobi Park" loading="lazy" />
+      <p>Nairobi is the only capital city in the world with a national park within its borders.</p>
+      <ul>
+        <li>🦁 Nairobi National Park</li>
+        <li>🦒 Giraffe Centre</li>
+        <li>🌳 Karura Forest</li>
+      </ul>
+    </section>
+
+    <section id="culture" class="card">
+      <h2>🎭 Culture & People</h2>
+      <p>A vibrant melting pot of over 40 Kenyan tribes and international communities:</p>
+      <ul>
+        <li>Hindu community</li>
+        <li>Somali diaspora</li>
+        <li>Expats and digital nomads</li>
+      </ul>
+      <img src="https://images.pexels.com/photos/31584934/pexels-photo-31584934.jpeg" alt="Somali culture in Nairobi" loading="lazy" />
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Nairobi Student Guide.</p>
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+  </script>
 </body>
 </html>
